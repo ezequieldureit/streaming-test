@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor de Video en AWS IVS</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="title">Livestreaming</h1>
+  <div class="video-container">
+    <video id="ivs-video" playsinline controls autoplay></video>
+  </div>
+</div>
+<script src="https://player.live-video.net/1.2.0/amazon-ivs-player.min.js"></script>
+<script>
+  const Player = IVSPlayer.create();
+  Player.attachHTMLVideoElement(document.getElementById('ivs-video'));
+  Player.load("https://255e48acda11.us-west-2.playback.live-video.net/api/video/v1/us-west-2.247531053155.channel.WJaYjZ6TX2Wn.m3u8");
+</script>
+</body>
+</html>
